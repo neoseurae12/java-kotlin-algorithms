@@ -1,6 +1,6 @@
 package ch01_prepCodingInterview
 
-class TwoSum {
+class TwoSumK {
   fun twoSum(nums: IntArray, target: Int): IntArray {
     val numsMap: MutableMap<Int, Int> = mutableMapOf()
     // 하나의 for 루프로 통합
