@@ -1,7 +1,5 @@
 package Programmers;
 
-import java.util.HashMap;
-
 public class P12922_WatermelonJ {
     public String solution(int n) {
         String complete = "수박";
