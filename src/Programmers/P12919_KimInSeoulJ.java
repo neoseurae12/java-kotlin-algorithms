@@ -1,7 +1,5 @@
 package Programmers;
 
-import java.util.HashMap;
-
 public class P12919_KimInSeoulJ {
     public String solution(String[] seoul) {
         for(int i = 0; i < seoul.length; i++) {
