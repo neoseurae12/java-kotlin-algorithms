@@ -12,7 +12,7 @@ public class ValidPalindromeJ {
     [x] 앞뒤로 한 칸씩 옮기며 비교
      */
 
-    public static boolean isPalindrome(String s) {
+    public boolean isPalindrome(String s) {
         s = s.toLowerCase();
         s = s.replaceAll("[^a-zA-Z0-9]", "");   // 정규식 => non-alphanumeric 문자들 제거
 
@@ -27,13 +27,5 @@ public class ValidPalindromeJ {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        String input1 = "A man, a plan, a canal: Panama";
-        String input2 = "race a car";
-        String input3 = " ";
-        boolean output = isPalindrome(input3);
-        System.out.println(output);
     }
 }
