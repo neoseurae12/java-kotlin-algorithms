@@ -7,7 +7,7 @@ package LeetCode;
 - Math.max() 함수만 잘 써도, 두 수의 크기 비교하는 if문 코드를 훨씬 단축시킬 수 있음.
  */
 
-public class L121_BestTimeToBuyAndSellStock {
+public class L121_BestTimeToBuyAndSellStockJ {
     public int maxProfit(int[] prices) {
         int buyTime = 0;
         int sellTime = 0;
