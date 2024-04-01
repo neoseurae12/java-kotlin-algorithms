@@ -1,5 +1,14 @@
 package ch06_processingString;
 
+/* Trial 1
+- 문자(char) 단위로 추출해서 처리
+- 비교 후 '마저' 진행할 것
+
+- String.charAt()
+- Character.toLowerCase()
+- Character.isLetterOrDigit()
+ */
+
 public class ValidPalindromeJ_1 {
     public boolean isPalindrome(String s) {
         int start = 0;
