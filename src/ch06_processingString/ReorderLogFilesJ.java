@@ -13,7 +13,11 @@ package ch06_processingString;
     - 람다 표현식
 - 분리
     - String[] split(String regex, int limit)
-- List<String> vs. String[]
+- 합체
+    - boolean Collection<E>.addAll(Collection<? extends E> c)
+- 변환
+    - <T> T[] Collection<E>.toArray(T[] a)
+    - List<String> vs. String[]
  */
 
 import java.util.ArrayList;
