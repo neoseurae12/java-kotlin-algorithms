@@ -7,7 +7,7 @@ package ch06_processingString
  */
 
 class ReverseStringK {
-  fun reserseString(s: CharArray): Unit {
+  fun reverseString(s: CharArray): Unit {
     var start = 0
     var end = s.size - 1;
     while (start < end) {
