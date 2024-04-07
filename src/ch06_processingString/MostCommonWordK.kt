@@ -41,6 +41,18 @@ class MostCommonWordK {
 
     val words = paragraph.replace("\\W+".toRegex(), " ").lowercase().trim().split(" ")
 
+    // 자세히 알아보기: trim() & split()
+    val beforeSplitWithNoTrim = paragraph.replace("\\W+".toRegex(), " ").lowercase() // trim() 안 함
+    val beforeSplitWithTrim = paragraph.replace("\\W+".toRegex(), " ").lowercase().trim()
+    val wordsWithNoTrim = beforeSplitWithNoTrim.split(" ")  // trim() 안 함
+    val wordsWithTrim = beforeSplitWithTrim.split(" ")
+
+    println(beforeSplitWithNoTrim)  // " 4me to good you to good "
+    println(beforeSplitWithTrim)    // "4me to good you to good"
+    println(wordsWithNoTrim)        // [, 4me, to, good, you, to, good, ]   // Java 와의 차이 발생 지점
+    println(wordsWithTrim)          // [4me, to, good, you, to, good]
+    // 끝 -------
+
     for (word in words) {
       if (!banned.contains(word)) {
         counts[word] = counts.getOrDefault(word, 0) + 1 // put() 메소드의 또다른 표현 in Kotlin
@@ -49,4 +61,8 @@ class MostCommonWordK {
 
     return counts.maxByOrNull { it.value }!!.key  // 문제의 제약 조건에 따라 널이 아님이 확실 => !! 로 처리
   }
+}
+
+fun main() {
+  MostCommonWordK().mostCommonWord(",/%4me to good ^you to **good*", arrayOf("to"))
 }

@@ -19,7 +19,7 @@ package ch06_processingString;
 import java.util.*;
 
 public class MostCommonWordJ {
-    public String mostCommonWord(String paragraph, String[] banned) {
+    public static String mostCommonWord(String paragraph, String[] banned) {
         // 전환: String[] -> Set<String>
             // Set 이 '비교 메소드'를 제공하기 때문
         Set<String> ban = new HashSet<>(Arrays.asList(banned));
@@ -28,6 +28,18 @@ public class MostCommonWordJ {
 
         // 데이터 클렌징
         String[] words = paragraph.replaceAll("\\W+", " ").toLowerCase().split(" ");
+
+        // 자세히 알아보기: trim() & split()
+        String wordsBeforeSplitWithNoTrim = paragraph.replaceAll("\\W+", " ").toLowerCase();    // trim() 안 함
+        String wordsBeforeSplitWithTrim = paragraph.replaceAll("\\W+", " ").toLowerCase().trim();
+        String[] wordsWithNoTrim = wordsBeforeSplitWithNoTrim.split(" ");   // trim() 안 함
+        String[] wordsWithTrim = wordsBeforeSplitWithTrim.split(" ");
+
+        System.out.println(wordsBeforeSplitWithNoTrim);         // " 4me to good you to good "
+        System.out.println(wordsBeforeSplitWithTrim);           // "4me to good you to good"
+        System.out.println(Arrays.toString(wordsWithNoTrim));   // [, 4me, to, good, you, to, good] // Kotlin 과의 차이 발생 지점
+        System.out.println(Arrays.toString(wordsWithTrim));     // [4me, to, good, you, to, good]
+        // 끝 -------
 
         for (String word : words) {
             // 금지된 단어가 아닐 경우에만 개수 처리
@@ -39,5 +51,9 @@ public class MostCommonWordJ {
 
         // 가장 흔하게 등장하는 단어 찾기
         return Collections.max(counts.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+    public static void main(String[] args) {
+        mostCommonWord(",/%4me to good ^you to **good*", new String[]{"to"});
     }
 }
