@@ -16,10 +16,10 @@ public class TwoSumJ_2 {
 
         // 최적화: 2개의 for 문 -> 하나의 for 문으로 통합
         for (int i = 0; i < nums.length; i++) {
-            int secondNum = target - nums[i];
+            int firstNum = target - nums[i];
             // 맵에 있을 경우 => 정답 리턴
-            if (numsMap.containsKey(secondNum)) {
-                return new int[]{i, numsMap.get(secondNum)};
+            if (numsMap.containsKey(firstNum)) {
+                return new int[]{numsMap.get(firstNum), i};
             }
             // 맵에 없을 경우 => 다음번 조회를 위해 맵에 저장
             numsMap.put(nums[i], i);
