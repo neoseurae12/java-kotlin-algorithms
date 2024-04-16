@@ -5,6 +5,7 @@ package ch07_array;
 - 투 포인터
     - 최대 높이 막대를 기준으로 양쪽의 포인터들을 최대 높이 막대를 향해 이동시킴
     - 최대 높이 막대 => 왼쪽, 오른쪽을 가르는 장벽 역할
+- '세로 (vertical)' 단위로 volume 에 추가
  */
 
 public class TrappingRainWaterJ {
