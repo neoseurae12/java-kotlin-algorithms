@@ -1,8 +1,9 @@
 package ch07_array;
 
-/* Trial 0
+/* Trial 0, 2
 
-- 문제를 이해하고 떠올 수 있는, 그저 '답'이 나올 수 있는 가장 단순한 풀이
+- 짝수 번째 값에 대한 계산
+    - 문제를 이해했다면 떠올 수 있는 '답'이 나오는 풀이
     - 오름차순으로 '정렬'을 한 뒤 앞부터 2개씩 건너뛰면서 더해나감
  */
 
@@ -17,6 +18,13 @@ public class ArrayPartition1J {
         for (int i = 0; i < nums.length; i += 2) {
             sum += nums[i];
         }
+        /* 또는
+        for (int i = 0; i < nums.length; i++) {
+            if (i % 2 == 0) {
+                sum += nums[i];
+            }
+        }
+         */
 
         return sum;
     }
