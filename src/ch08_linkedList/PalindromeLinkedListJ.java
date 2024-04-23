@@ -10,15 +10,8 @@ package ch08_linkedList;
 - [주의] Stack<>() => 더 이상 사용해선 안 되는 자료형
  */
 
+import datatype.ListNode;
 import java.util.Stack;
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
 
 public class PalindromeLinkedListJ {
     public boolean isPalindrome(ListNode head) {
