@@ -1,0 +1,68 @@
+package ch08_linkedList;
+
+/* Trial 3 에 대한 디버깅 */
+
+import datatype.ListNode;
+
+public class PalindromeLinkedListJ_2_debug {
+    public static boolean isPalindrome(ListNode head) {
+        // 러너 기법; 빠른 러너, 느린 러너
+        ListNode fast = head, slow = head;
+
+        // 이동: 빠른 러너 => 2칸씩, 느린 러너 => 1칸씩
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        // 홀수 개일 경우 => 느린 러너가 한 칸 더 앞으로 이동
+        // 중앙 값은 팰린드롬 체크에서 스킵 한다.
+        if (fast != null) {
+            slow = slow.next;
+        }
+
+        // 중간에 도달한 느린 러너를 기준으로 역순 연결 리스트 `rev` 생성
+        // 일명 '꼬리 바꿔 껴주기'...!
+        ListNode rev = null;
+        while (slow != null) {
+            // 1 -> 2 -> 3 -> 4 -> 3 -> 2 -> 1 의 경우
+            // 기존 꼬리 세이브
+            ListNode next = slow.next;    // next: 2 -> 1 -> null   // next: 1 -> null      // next: null
+            // 역순 꼬리로 바꿔 끼기 => rev
+            slow.next = rev;              // slow: 3 -> null        // slow: 2 -> 3 -> null // slow: 1 -> 2 -> 3 -> null
+            rev = slow;                   // rev: 3 -> null         // rev: 2 -> 3 -> null  // rev: 1 -> 2 -> 3 -> null
+            // 기존 꼬리 다시 갖다 붙이기 => slow
+            slow = next;                  // slow: 2 -> 1 -> null   // slow: 1 -> null      // slow: null (끝)
+
+            /* debugging
+            ListNode debug = rev;
+            while (debug != null) {
+                System.out.print(debug.val);
+                debug = debug.next;
+            }
+            System.out.println();
+             */
+        }
+
+        // 비교: head 전반부 vs. rev
+        while (rev != null) {
+            if (rev.val != head.val) {
+                return false;
+            }
+            rev = rev.next;
+            head = head.next;
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        ListNode input = ListNode.createList(1, 2, 3, 4, 3, 2, 1);
+
+        isPalindrome(input);
+        /* output
+        3
+        23
+        123
+         */
+    }
+}
