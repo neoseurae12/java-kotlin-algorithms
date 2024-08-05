@@ -6,6 +6,7 @@ package ch09_stack_queue;
     - 열림 괄호 [, {, ( => 스택 PUSH
     - 닫힘 괄호 ], }, ) => 스택 POP & 매핑 테이블 결과 비교
 - 익명 내부 클래스
+- 오토박싱 & 언박싱
  */
 
 import java.util.ArrayDeque;
