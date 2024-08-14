@@ -7,7 +7,7 @@ package ch09_stack_queue
 
 import java.util.*
 
-class ImplementStackUsingQueues {
+class ImplementStackUsingQueuesK {
   val queue: Queue<Int> = LinkedList()
 
   fun push(x: Int) {
