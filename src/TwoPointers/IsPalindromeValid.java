@@ -16,6 +16,14 @@ package TwoPointers;
     - 따라서 유니코드에서 16비트로 표현할 수 있는 문자(BMP 영역의 문자)만 제대로 처리 가능
         - BMP: Basic Multilingual Plane, 기본 다국어 평면
     - 32비트 문자(이모지)를 다룰 때는 최대 32비트(4바이트)까지 처리 가능한 `codePointAt(int index)`를 사용해야 함
+- 시간복잡도: O(N)
+- 공간복잡도: O(1)
+- 코딩테스트 인터뷰 팁
+    - 1) 문제의 요구조건을 명확히 할 것
+        - 단순한 "palindrome 여부를 체크하라"는 문제에도, 세부 요구사항(e.g. non-alphanumeric characters 의 존재 여부 및 처리, 대소문자 구별 등)에 따라 구현 난이도가 달라질 것
+    - 2) in-build functions 사용에 대해 여쭤볼 것
+        - '팀 플레이어'의 면모를 보여줄 기회
+        - 그들의 스타일과 나의 스타일의 합치점을 찾는 모습 어필
  */
 
 public class IsPalindromeValid {
@@ -42,11 +50,5 @@ public class IsPalindromeValid {
 
         // 비교가 정상적으로 모두 끝났다면 => true 리턴
         return true;
-    }
-
-    public static void main(String[] args) {
-        String s = "a+2c!2a";
-
-        System.out.println(isPalindromeValid(s));
     }
 }
