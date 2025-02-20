@@ -42,9 +42,4 @@ public class ListNode {
         return val == listNode.val &&
                 Objects.equals(next, listNode.next);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(val, next);
-    }
 }
