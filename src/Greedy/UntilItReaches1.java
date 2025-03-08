@@ -13,12 +13,12 @@ public class UntilItReaches1 {
         k = sc.nextInt();
 
         while (n != 1) {
-            if (n % k == 0) {
+            int untilMultiple = n % k;
+            if (untilMultiple == 0) {
                 n /= k;
                 cntUntil1++;
             }
             else {
-                int untilMultiple = n % k;
                 cntUntil1 += untilMultiple;
                 n -= untilMultiple;
             }
