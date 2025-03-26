@@ -1,5 +1,6 @@
-package BinarySearch;
+package BinarySearch.test;
 
+import BinarySearch.CuttingWood;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

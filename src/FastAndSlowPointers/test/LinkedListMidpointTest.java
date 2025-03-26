@@ -1,5 +1,6 @@
-package FastAndSlowPointers;
+package FastAndSlowPointers.test;
 
+import FastAndSlowPointers.LinkedListMidpoint;
 import datatype.ListNode;
 import org.junit.jupiter.api.Test;
 

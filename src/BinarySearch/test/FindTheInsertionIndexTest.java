@@ -1,5 +1,7 @@
-package BinarySearch;
+package BinarySearch.test;
 
+import BinarySearch.FindTheInsertionIndex;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,7 +10,7 @@ class FindTheInsertionIndexTest {
     @Test
     void testTargetExistsInArray() {
         int[] nums = {1, 2, 4, 5, 7, 8, 9};
-        assertEquals(2, FindTheInsertionIndex.findTheInsertionIndex(nums, 4));
+        Assertions.assertEquals(2, FindTheInsertionIndex.findTheInsertionIndex(nums, 4));
         assertEquals(6, FindTheInsertionIndex.findTheInsertionIndex(nums, 9));
     }
 

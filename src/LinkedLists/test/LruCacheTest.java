@@ -1,5 +1,6 @@
-package LinkedLists;
+package LinkedLists.test;
 
+import LinkedLists.LruCache;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

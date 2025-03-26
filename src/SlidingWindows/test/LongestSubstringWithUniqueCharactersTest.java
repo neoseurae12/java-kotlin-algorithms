@@ -1,5 +1,7 @@
-package SlidingWindows;
+package SlidingWindows.test;
 
+import SlidingWindows.LongestSubstringWithUniqueCharacters;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LongestSubstringWithUniqueCharactersTest {
     @Test
     void testEmptyString() {
-        assertEquals(0, LongestSubstringWithUniqueCharacters.longestSubstringWithUniqueChars(""));
+        Assertions.assertEquals(0, LongestSubstringWithUniqueCharacters.longestSubstringWithUniqueChars(""));
     }
 
     @Test

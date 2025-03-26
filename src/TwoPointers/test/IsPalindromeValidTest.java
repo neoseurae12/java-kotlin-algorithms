@@ -1,5 +1,7 @@
-package TwoPointers;
+package TwoPointers.test;
 
+import TwoPointers.IsPalindromeValid;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -9,7 +11,7 @@ class IsPalindromeValidTest {
 
     @Test
     void testPalindromeValidCases() {
-        assertTrue(IsPalindromeValid.isPalindromeValid(""));
+        Assertions.assertTrue(IsPalindromeValid.isPalindromeValid(""));
         assertTrue(IsPalindromeValid.isPalindromeValid("a"));
         assertTrue(IsPalindromeValid.isPalindromeValid("aa"));
         assertTrue(IsPalindromeValid.isPalindromeValid("!, (?)"));

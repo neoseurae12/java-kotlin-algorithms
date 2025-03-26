@@ -1,6 +1,8 @@
-package FastAndSlowPointers;
+package FastAndSlowPointers.test;
 
+import FastAndSlowPointers.LinkedListLoopHashSet;
 import datatype.ListNode;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +15,7 @@ class LinkedListLoopHashSetTest {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
 
-        assertFalse(LinkedListLoopHashSet.linkedListLoopHashSet(head));
+        Assertions.assertFalse(LinkedListLoopHashSet.linkedListLoopHashSet(head));
     }
 
     @Test

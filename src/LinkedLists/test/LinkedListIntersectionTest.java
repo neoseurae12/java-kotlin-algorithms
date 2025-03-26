@@ -1,9 +1,9 @@
-package LinkedLists;
+package LinkedLists.test;
 
+import LinkedLists.LinkedListIntersection;
 import datatype.ListNode;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedListIntersectionTest {
     @Test
@@ -16,6 +16,6 @@ class LinkedListIntersectionTest {
         ListNode headB = ListNode.createList(6, 4);
         headB.next.next = shared;
 
-        assertEquals(8, LinkedListIntersection.linkedListIntersection(headA, headB).val);
+        Assertions.assertEquals(8, LinkedListIntersection.linkedListIntersection(headA, headB).val);
     }
 }

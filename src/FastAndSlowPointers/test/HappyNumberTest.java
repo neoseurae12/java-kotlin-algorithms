@@ -1,5 +1,7 @@
-package FastAndSlowPointers;
+package FastAndSlowPointers.test;
 
+import FastAndSlowPointers.HappyNumber;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class HappyNumberTest {
     @Test
     void testHappyNumber() {
-        assertTrue(HappyNumber.happy_number(23));
+        Assertions.assertTrue(HappyNumber.happy_number(23));
     }
 
     @Test

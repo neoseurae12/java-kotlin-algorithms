@@ -1,5 +1,6 @@
-package HashMapsSets;
+package HashMapsSets.test;
 
+import HashMapsSets.PairSumUnsorted_TwoPass;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
