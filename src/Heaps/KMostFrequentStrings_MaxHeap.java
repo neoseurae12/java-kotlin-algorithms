@@ -27,6 +27,7 @@ package Heaps;
         - Max Heap
             - 1. Max Heap 생성
                 - (문자열, frequency) 저장
+                    - Pair 클래스의 도입
                 - 생성 방법 (2가지)
                     - 1. 모든 문자열들에 대해 push하기
                         - 비효율적인 방법
@@ -44,13 +45,31 @@ package Heaps;
     - Hash Map / Max Heap
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+
+import java.util.*;
 
 public class KMostFrequentStrings_MaxHeap {
+    public static class Pair implements Comparable<Pair> {
+        String str;
+        int freq;
+
+        public Pair(String str, int freq) {
+            this.str = str;
+            this.freq = freq;
+        }
+
+        @Override
+        public int compareTo(Pair other) {
+            if (this.freq == other.freq) {
+                // reverse lexicographical order
+                return other.str.compareTo(this.str);
+            }
+
+            // lower-frequency order
+            return Integer.compare(this.freq, other.freq);
+        }
+    }
+
     public static List<String> kMostFrequentStringsMaxHeap(String[] strs, int k) {
         List<String> result = new ArrayList<>();
 
@@ -58,22 +77,15 @@ public class KMostFrequentStrings_MaxHeap {
         for (String str : strs)
             freqs.put(str, freqs.getOrDefault(str, 0) + 1);
 
-        PriorityQueue<String> maxHeap = new PriorityQueue<>(
-                (o1, o2) -> {
-                    // lexicographical order
-                    if (freqs.get(o1).equals(freqs.get(o2))) {
-                        return o1.compareTo(o2);
-                    }
+        PriorityQueue<Pair> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
 
-                    // higher-frequency order
-                    return Integer.compare(freqs.get(o2), freqs.get(o1));
-                }
-        );
+        for (Map.Entry<String, Integer> entry : freqs.entrySet()) {
+            maxHeap.add(new Pair(entry.getKey(), entry.getValue()));
+        }
 
-        maxHeap.addAll(freqs.keySet());
-
-        for (int i = 0; i < k; i++)
-            result.add(maxHeap.poll());
+        for (int i = 0; i < k && !maxHeap.isEmpty(); i++) {
+            result.add(maxHeap.poll().str);
+        }
 
         return result;
     }
