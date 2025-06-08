@@ -15,9 +15,9 @@ package SortAndSearch;
                 - input array에 상관없이 even partition의 가능성을 높여 average-case 시간복잡도를 보장함
     - Optimized Result
         - SortArrayTest 참고
-            - Naive Quicksort: 13 ms
-            - Optimized Quicksort: 1 ms
-            - 결론: 약 13배의 성능 최적화 발생!
+            - Naive Quicksort: 42 ms
+            - Optimized Quicksort: 3 ms
+            - 결론: 약 14배의 성능 최적화 발생!
  */
 
 public class SortArray_QuickSort_Optimized {
