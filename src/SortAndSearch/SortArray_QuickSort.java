@@ -1,5 +1,20 @@
 package SortAndSearch;
 
+/*
+- Sort and Search > Sort
+- 시간복잡도
+    - Average case: O(N log N)
+        - recursive tree의 level => log N
+        - level마다의 partition => N
+    - Worst case
+        - recursive tree의 level => N
+            - extreme pivot 선택으로 인한 uneven partitioning 발생
+        - level마다의 partition => N
+- 공간복잡도
+    - Average case: recursive call stack => O(log N)
+    - Worst case: recursive call stack => O(N)
+ */
+
 public class SortArray_QuickSort {
     public int[] sortArray(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
@@ -8,8 +23,7 @@ public class SortArray_QuickSort {
 
     private void quickSort(int[] nums, int left, int right) {
         // Base Case: subarray에 0개 또는 1개의 element밖에 없을 경우 => 이미 정렬됨을 의미
-        if (left >= right)
-            return;
+        if (left >= right) return;
 
         // partitioning & pivot의 인덱스 찾기
         int pivotIndex = partition(nums, left, right);
